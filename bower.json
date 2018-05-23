@@ -1,0 +1,22 @@
+{
+  "name": "tment-website",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Eðvald Atli"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/edvaldatli/tournament-website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
