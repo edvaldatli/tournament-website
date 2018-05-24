@@ -10,28 +10,9 @@ const SteamStrategy = require('passport-steam').Strategy;
 const app = express();
 const session = require('express-session');
 
-const url = 'mongodb+srv://eddi:Banani123@tment-website-t3ivj.mongodb.net/test?retryWrites=true';
-const dbName = 'test';
+// Middleware
+var db = require('./middleware/db');
 
-// MongoClient.connect(url, function(err, client) {
-//   assert.equal(null, err);
-//   console.log("Connected successfully to server");
-//
-//   const db = client.db(dbName);
-//
-//   db.collection('inserts').insertOne({a:"ewq"}, function(err, r) {
-//     assert.equal(null, err);
-//     assert.equal(1, r.insertedCount);
-//
-//     // Insert multiple documents
-//     db.collection('inserts').insertMany([{a:2}, {a:3}], function(err, r) {
-//       assert.equal(null, err);
-//       assert.equal(2, r.insertedCount);
-//
-//   client.close();
-// });
-// });
-// });
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -63,8 +44,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
-
-
 
 
 app.engine('handlebars', exphbs());
